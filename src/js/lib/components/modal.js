@@ -25,5 +25,3 @@ $.prototype.modal = function() {
         }
     });
 };
-
-$('[data-toggle="modal"]').modal();
