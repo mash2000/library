@@ -1,3 +1,4 @@
 import './lib/lib';
+import './lib/modules/classes';
 
-$('.active').toggle();
+$('.active').toggle().addClass('h1');
