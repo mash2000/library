@@ -1,4 +1,5 @@
-import './lib/lib';
-import './lib/modules/classes';
+import $ from './lib/lib';
 
-$('.active').toggle().addClass('h1');
+$('button').on('click', function() {
+	$(this).hide().show().toggleClass('active');
+});
