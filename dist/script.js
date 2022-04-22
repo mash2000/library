@@ -86,201 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/lib/core.js":
-/*!****************************!*\
-  !*** ./src/js/lib/core.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-const $ = function (selector) {
-  return new $.prototype.init(selector);
-};
-
-$.prototype.init = function (selector) {
-  if (!selector) {
-    return this; // {}
-  }
-
-  if (selector.tagName) {
-    this[0] = selector;
-    this.length = 1;
-    return this;
-  }
-
-  Object.assign(this, document.querySelectorAll(selector));
-  this.length = document.querySelectorAll(selector).length;
-  return this;
-};
-
-$.prototype.init.prototype = $.prototype;
-window.$ = $;
-/* harmony default export */ __webpack_exports__["default"] = ($);
-
-/***/ }),
-
 /***/ "./src/js/lib/lib.js":
 /*!***************************!*\
   !*** ./src/js/lib/lib.js ***!
   \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./core */ "./src/js/lib/core.js");
-/* harmony import */ var _modules_display__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/display */ "./src/js/lib/modules/display.js");
-/* harmony import */ var _modules_classes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/classes */ "./src/js/lib/modules/classes.js");
-/* harmony import */ var _modules_handlers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/handlers */ "./src/js/lib/modules/handlers.js");
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_core__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-/***/ }),
-
-/***/ "./src/js/lib/modules/classes.js":
-/*!***************************************!*\
-  !*** ./src/js/lib/modules/classes.js ***!
-  \***************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
-
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
-  for (let i = 0; i < this.length; i++) {
-    this[i].classList.add(...arguments);
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeClass = function () {
-  for (let i = 0; i < this.length; i++) {
-    this[i].classList.remove(...arguments);
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleClass = function () {
-  for (let i = 0; i < this.length; i++) {
-    this[i].classList.toggle(...arguments);
-  }
-
-  return this;
-};
-
-/***/ }),
-
-/***/ "./src/js/lib/modules/display.js":
-/*!***************************************!*\
-  !*** ./src/js/lib/modules/display.js ***!
-  \***************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
-
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.show = function () {
-  for (let i = 0; i < this.length; i++) {
-    if (!this[i].style) {
-      continue;
-    }
-
-    this[i].style.display = '';
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.hide = function () {
-  for (let i = 0; i < this.length; i++) {
-    if (!this[i].style) {
-      continue;
-    }
-
-    this[i].style.display = 'none';
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggle = function () {
-  for (let i = 0; i < this.length; i++) {
-    if (!this[i].style) {
-      continue;
-    }
-
-    if (this[i].style.display === 'none') {
-      this[i].style.display = '';
-    } else {
-      this[i].style.display = 'none';
-    }
-  }
-
-  return this;
-};
-
-/***/ }),
-
-/***/ "./src/js/lib/modules/handlers.js":
-/*!****************************************!*\
-  !*** ./src/js/lib/modules/handlers.js ***!
-  \****************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../core */ "./src/js/lib/core.js");
-
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.on = function (eventName, callback) {
-  if (!eventName || !callback) {
-    return this;
-  }
-
-  for (let i = 0; i < this.length; i++) {
-    this[i].addEventListener(eventName, callback);
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.off = function (eventName, callback) {
-  if (!eventName || !callback) {
-    return this;
-  }
-
-  for (let i = 0; i < this.length; i++) {
-    this[i].removeEventListener(eventName, callback);
-  }
-
-  return this;
-};
-
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handler) {
-  for (let i = 0; i < this.length; i++) {
-    if (handler) {
-      this[i].addEventListener('click', handler);
-    } else {
-      this[i].click();
-    }
-  }
-
-  return this;
-};
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\projects\\library\\src\\js\\lib\\lib.js: Unexpected token (5:0)\n\n\u001b[0m \u001b[90m 3 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m'./modules/classes'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m'./modules/handlers'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[32m'./modules/actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 |\u001b[39m \u001b[33m>>>\u001b[39m\u001b[33m>>>\u001b[39m\u001b[33m>\u001b[39m \u001b[35m101\u001b[39mb383573270694742e67577a1d40e2828b0ddf\u001b[0m\n    at instantiate (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:72:32)\n    at constructor (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:358:12)\n    at Parser.raise (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:3335:19)\n    at Parser.unexpected (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:3373:16)\n    at Parser.parseExprAtom (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:13015:22)\n    at Parser.parseExprSubscripts (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:12540:23)\n    at Parser.parseUpdate (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:12519:21)\n    at Parser.parseMaybeUnary (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:12490:23)\n    at Parser.parseMaybeUnaryOrPrivate (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:12284:61)\n    at Parser.parseExprOps (D:\\projects\\library\\node_modules\\@babel\\parser\\lib\\index.js:12291:23)");
 
 /***/ }),
 
@@ -294,10 +107,12 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
+/* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_lib_lib__WEBPACK_IMPORTED_MODULE_0__);
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').on('click', function () {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(this).hide().show().toggleClass('active');
+_lib_lib__WEBPACK_IMPORTED_MODULE_0___default()('button').on('click', function () {
+  _lib_lib__WEBPACK_IMPORTED_MODULE_0___default()('div').eq(2).toggleClass('active');
 });
+console.log(_lib_lib__WEBPACK_IMPORTED_MODULE_0___default()('button').html('Hello'));
 
 /***/ })
 
